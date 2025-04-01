@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería de Imágenes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">Mi Galería</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <div class="mb-3">
+            <label for="categoria">Filtrar por categoría:</label>
+            <select id="categoria" class="form-control">
+                <option value="all">Todos</option>
+                <option value="naturaleza">Naturaleza</option>
+                <option value="ciudad">Ciudad</option>
+                <option value="abstracto">Abstracto</option>
+            </select>
+        </div>
+    
+        <div id="image-gallery" class="masonry">
+            <a href="galeria-datalle.html?image=./assets/imagen1.avif&title=Paisaje Montañoso&description=Un hermoso paisaje de montañas y árboles.">
+                <img src="./assets/imagen1.avif" alt="Imagen de naturaleza" data-category="naturaleza">
+            </a>
+            <img src="./assets/imagen2.avif" alt="Imagen de ciudad" data-category="ciudad">
+            <img src="./assets/imagen2.webp" alt="Imagen abstracta" data-category="abstracto">
+            <img src="./assets/imagen4.jpg" alt="Otra imagen de naturaleza" data-category="naturaleza">
+            <img src="./assets/imagen5.avif" alt="Otra imagen de ciudad" data-category="ciudad">
+            <img src="./assets/imagen6.jpeg" alt="Otra imagen abstracta" data-category="abstracto">
+            <img src="./assets/imagen2.avif" alt="Imagen de ciudad" data-category="ciudad">
+            <img src="./assets/imagen4.jpg" alt="Imagen de naturaleza" data-category="naturaleza">
+        </div>
+    
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Mi Galería de Imágenes</p>
+    </footer>
+    <script>
+        const categoryFilter = document.getElementById('category-filter');
+        const images = document.querySelectorAll('#image-gallery img');
+
+        categoryFilter.addEventListener('change', (event) => {
+            const selectedCategory = event.target.value;
+
+            images.forEach(image => {
+                if (selectedCategory === 'all' || image.dataset.category === selectedCategory) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
