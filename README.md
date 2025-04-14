@@ -3,7 +3,8 @@ diplomado-primer-proyecto
 
 ## Descripción
 
-Este es mi primer proyecto, el objetivo principal de este proyecto es [menciona el propósito principal o el aprendizaje que esperabas obtener al hacerlo].
+Este es mi primer proyecto, el objetivo principal de este proyecto es de aprendizaje para el dipolmado de
+desarrollo de paginas web.
 
 ## Tecnologías Utilizadas
 
